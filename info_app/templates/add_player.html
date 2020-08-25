@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>-----------------Add PLAYER INFO-----------------</h1>
+    <form action="{% url 'add_player' team_pk %}" method="POST"> {% csrf_token %}
+        <input placeholder="Enter Name" name="name">
+        <br/>
+        <input placeholder="Enter Age" name="age">
+        <br/>
+        <textarea placeholder="Enter You want to tell anyone" name="info_self">
+        </textarea>
+        <br/>
+        <button type="submit">ADD_PLAYER</button>
+    </form>
+</body>
+</html>

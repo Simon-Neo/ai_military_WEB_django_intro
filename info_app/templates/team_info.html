@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1> ----------HOME PAGE---------- </h1>
+
+    <h2> SIGN_UP & LOGIN </h2>
+
+    {% if user.is_logined  %}
+        <h3>{{ user.id }} Goot morning</h3>
+        <a href="{% url 'log_out' %}">
+            <button>LOG OUT</button>
+        </a>
+    {% else %}
+        <a href="{% url 'sign_up' %}">
+            <button>SIGN UP</button>
+        </a>
+
+        <a href="{% url 'log_in' %}">
+            <button>LOGIN</button>
+        </a>
+    {% endif %}
+
+    <h2> TEAM INFO </h2>
+    {% for data in team_data %}
+
+        <a href="{% url 'player' data.pk %}">
+            Name : {{ data.name }}
+        </a>
+        &nbsp; Nation : {{ data.nation }} &nbsp;
+        num_of_champ : {{ data.number_of_champ }}&nbsp;
+        <br/>
+    {% endfor %}
+</body>
+</html>

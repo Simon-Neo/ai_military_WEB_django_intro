@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1> ----------SIGN UP---------- </h1>
+
+    {% if error.is_error == True %}
+        {{ error.error_msg }}
+{#    {% else %}#}
+
+    {% endif %}
+
+    <form action="{% url 'sign_up' %}" method="POST"> {% csrf_token %}
+        <p>ID : <input placeholder="Enter Id" name="id"></p>
+
+        <p>PASS : <input placeholder="Enter password" name="password"></p>
+
+        <p>PASS_CHECK : <input placeholder="Enter password_check"
+                               name="password_check"></p>
+        <button type="submit">SIGN_UP</button>
+    </form>
+</body>
+</html>

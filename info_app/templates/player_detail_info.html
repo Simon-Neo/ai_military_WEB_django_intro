@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>-----------------PLAYER DETAIL INFO-----------------</h1>
+    <p>Name  :  {{ player_data.name }}</p>
+    <p>Age  :  {{ player_data.age }}</p>
+    <p>Self Intro  :  {{ player_data.info_self }}</p>
+    {#     Delete   #}
+
+    <form action="{% url 'player_del' player_data.team_id player_data.pk %}"
+                                                method="POST">{% csrf_token %}
+        <button type="submit">DELETE</button>
+    </form>
+{#    <button onclick="Really">DELETE</button>#}
+    {#     Edit   #}
+    <a href="{% url 'player_edit' player_pk %}">
+        <button>EDIT</button>
+    </a>
+
+</body>
+</html>

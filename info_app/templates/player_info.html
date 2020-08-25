@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>-----------------PLAYER INFO-----------------</h1>
+    {% for player in player_data %}
+        <a href="{% url 'player_detail_info' player.pk %}">Player : {{ player.name }}</a>
+        <br>
+    {% endfor %}
+    <br/>
+    <a href="{% url 'add_player' team_pk %}">
+        <button>Add Player</button>
+    </a>
+</body>
+</html>
